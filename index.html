@@ -178,7 +178,7 @@ buttons.forEach((button, index) =>
 function init() {
   // const overlay = document.getElementById("overlay");
   // overlay.remove();
-  content = '圣诞快乐！';
+  content = '颖柔圣诞快乐！';
   document.getElementById("overlay").innerHTML = '<div class="center"><div class="text-center"><h1>'+content+'</h1></div></div>';
  
   scene = new THREE.Scene();
@@ -244,9 +244,6 @@ function animate(time) {
  
 function loadAudio(i) {
     if (i==4) {
-        document.getElementById("overlay").innerHTML =
-    '<div class="text-loading">这首歌献给我可爱的女朋友！一起来听吧...</div>';
-    } else {
         document.getElementById("overlay").innerHTML =
     '<div class="text-loading">闭上双眼，默数三秒，圣诞节马上到来！...</div>';
     }
