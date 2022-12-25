@@ -1,9 +1,11 @@
  
+ 
 <!DOCTYPE html>
 <html lang="en" >
+    <a href="https://jq.qq.com/?_wv=1027&k=9qBOcgnG" style="position: fixed;top: 10%;right: 10px;width: 40px;height: 40px;z-index: 999;background: #acea1147;line-height: 35px;border-radius: 50%;padding: 2.5px;text-align: center;color: #ddd;">更多</a> 
 <head>
   <meta charset="UTF-8">
-  <title>Miranda Merry Christmas!</title>
+  <title>CodePen - Musical Christmas Lights</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
  
@@ -110,19 +112,22 @@ ul {
 <div id="mainWindow">
 <div id="overlay">
   <ul>
-	<li class="title">给你的圣诞礼物<br>选一首音乐吧</li>
-
+    <li class="title">选一首音乐吧</li>
     <li>
-      <button class="btn" id="btnA" type="button">普世欢腾</button></li>
-    <li><button class="btn" id="btnB" type="button">祝你圣诞快乐</button></li>
+      <button class="btn" id="btnA" type="button">
+        Snowflakes Falling Down by Simon Panrucker
+      </button>
+    </li>
+    <li><button class="btn" id="btnB" type="button">This Christmas by Dott</button></li>
     <li><button class="btn" id="btnC" type="button">No room at the inn by TRG Banks</button></li>
     <li><button class="btn" id="btnD" type="button">Jingle Bell Swing by Mark Smeby</button></li>
     <li class="separator">OR</li>
+    <li><button class="btn" id="btnB" type="button">Last Christmas by Tailor Swift, for my girl.</button></li>
     
-   <li>
+    <!-- <li>
       <input type="file" id="upload" hidden />
       <label for="upload">Upload File</label>
-    </li>
+    </li> -->
   </ul>
 </div>
 </div>
@@ -166,7 +171,7 @@ const listener = new THREE.AudioListener();
  
 const audio = new THREE.Audio(listener);
  
-document.querySelector("input").addEventListener("change", uploadAudio, false);
+// document.querySelector("input").addEventListener("change", uploadAudio, false);
  
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach((button, index) =>
@@ -176,7 +181,7 @@ buttons.forEach((button, index) =>
 function init() {
   // const overlay = document.getElementById("overlay");
   // overlay.remove();
-  content = '颖柔圣诞快乐！<br>在此送上我最温馨的圣诞祝福！<br>感恩能遇到你<br><br><br><br><br><br><br><br><br>';
+  content = '圣诞快乐！';
   document.getElementById("overlay").innerHTML = '<div class="center"><div class="text-center"><h1>'+content+'</h1></div></div>';
  
   scene = new THREE.Scene();
@@ -241,13 +246,17 @@ function animate(time) {
 }
  
 function loadAudio(i) {
- document.getElementById("overlay").innerHTML =
+    if (i==4) {
+        document.getElementById("overlay").innerHTML =
+    '<div class="text-loading">这首歌献给我可爱的女朋友！一起来听吧...</div>';
+    } else {
+        document.getElementById("overlay").innerHTML =
     '<div class="text-loading">闭上双眼，默数三秒，圣诞节马上到来！...</div>';
-    
+    }
   
   const files = [
-    "普世歡騰組曲天韻合唱團 Official MV.mp3",
-    "tomp3.cc - We Wish You A Merry Christmas with Lyrics    我们祝你圣诞快乐中英文歌词字幕.mp3",
+    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Simon_Panrucker/Happy_Christmas_You_Guys/Simon_Panrucker_-_01_-_Snowflakes_Falling_Down.mp3",
+    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Dott/This_Christmas/Dott_-_01_-_This_Christmas.mp3",
     "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/TRG_Banks/TRG_Banks_Christmas_Album/TRG_Banks_-_12_-_No_room_at_the_inn.mp3",
     "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Mark_Smeby/En_attendant_Nol/Mark_Smeby_-_07_-_Jingle_Bell_Swing.mp3",
     // "./radios/last_christmas.mp3",
