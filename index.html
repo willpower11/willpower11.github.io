@@ -28,6 +28,7 @@ html,body{
     </div>
   </div>
 </div>
+
 <script>
 function initVars(){
 
@@ -50,12 +51,13 @@ function initVars(){
 		sparkPics.push(sparkPic);
 	}
 	sparks=new Array();
-	pow1=new Audio(s+"pow1.ogg");
+	pow1=new Audio(s+"普世歡騰組曲天韻合唱團 Official MV.mp3");
 	pow2=new Audio(s+"pow2.ogg");
 	pow3=new Audio(s+"pow3.ogg");
 	pow4=new Audio(s+"pow4.ogg");
 	frames = 0;
 }
+
 
 function rasterizePoint(x,y,z){
 
@@ -344,7 +346,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('|#countdown 3||新|年|快|乐|#rectangle|');
+      S.UI.simulate('|#countdown 3||新|年|快|乐|#time|');
     }
 
     S.Drawing.loop(function () {
