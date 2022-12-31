@@ -52,7 +52,7 @@ function initVars(){
 		sparkPics.push(sparkPic);
 	}
 	sparks=new Array();
-	pow1=new Audio(s+"普世歡騰組曲天韻合唱團 Official MV.mp3");
+	pow1=new Audio(s+"pow1.ogg");
 	pow2=new Audio(s+"pow2.ogg");
 	pow3=new Audio(s+"pow3.ogg");
 	pow4=new Audio(s+"pow4.ogg");
@@ -154,7 +154,7 @@ function splode(x,y,z){
 		sparks.push(spark);
 	}
 	switch(parseInt(Math.random()*4)){
-		case 0:	pow=new Audio(s+"普世歡騰組曲天韻合唱團 Official MV.mp3"); break;
+		case 0:	pow=new Audio(s+"pow1.ogg"); break;
 		case 1:	pow=new Audio(s+"pow2.ogg"); break;
 		case 2:	pow=new Audio(s+"pow3.ogg"); break;
 		case 3:	pow=new Audio(s+"pow4.ogg"); break;
@@ -347,7 +347,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('|#countdown 3||新|年|快|乐|#time|');
+      S.UI.simulate('|#countdown 3|2023|新|年|快|乐|颖|柔#time|');
     }
 
     S.Drawing.loop(function () {
